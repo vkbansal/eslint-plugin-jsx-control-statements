@@ -59,8 +59,8 @@ Finally, enable all of the rules that you would like to use.
 [MIT License](http://www.opensource.org/licenses/mit-license.php). Copyright(c) [Vivek Kumar Bansal](http://vkbansal.me/)
 
 
-[npm-url]: https://npmjs.org/package/eslint-plugin-react
-[npm-image]: http://img.shields.io/npm/v/eslint-plugin-react.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/eslint-plugin-jsx-control-statements
+[npm-image]: http://img.shields.io/npm/v/eslint-plugin-jsx-control-statements.svg?style=flat-square
 
 [travis-url]: https://travis-ci.org/vkbansal/eslint-plugin-jsx-control-statements
 [travis-image]: http://img.shields.io/travis/vkbansal/eslint-plugin-jsx-control-statements/master.svg?style=flat-square
