@@ -16,6 +16,7 @@ var rule = require("../../../lib/rules/jsx-if-single-child"),
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
+
 ruleTester.run("jsx-if-single-child", rule, {
 
     valid: [

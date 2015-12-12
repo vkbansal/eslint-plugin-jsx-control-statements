@@ -11,11 +11,13 @@
 
 var rule = require("../../../lib/rules/jsx-if-condition"),
     RuleTester = require("eslint").RuleTester;
+
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
+
 ruleTester.run("jsx-if-condition", rule, {
 
     valid: [
