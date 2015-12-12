@@ -1,0 +1,40 @@
+{
+  "name": "eslint-plugin-jsx-control-statements",
+  "version": "0.0.0",
+  "author": "Vivek Kumar Bansal <vkb0310@gmail.com>",
+  "description": "jsx-control-statements specific linting rules for ESLint",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit-test",
+    "lint": "eslint lib/",
+    "unit-test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha tests/**/*.js -- --reporter dot",
+    "coveralls": "cat ./reports/coverage/lcov.info | coveralls"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vkbansal/eslint-plugin-jsx-control-statements"
+  },
+  "homepage": "https://github.com/vkbansal/eslint-plugin-jsx-control-statements",
+  "bugs": "https://github.com/vkbansal/eslint-plugin-jsx-control-statements",
+  "devDependencies": {
+    "babel-eslint": "^5.0.0-beta4",
+    "coveralls": "^2.11.4",
+    "eslint": "^1.10.2",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4"
+  },
+  "keywords": [
+    "eslint-plugin",
+    "eslintplugin",
+    "eslint",
+    "react",
+    "jsx-control-statements"
+  ],
+  "license": "MIT"
+}
