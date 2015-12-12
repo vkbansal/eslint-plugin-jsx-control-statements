@@ -1,2 +1,8 @@
 ---
     extends: ["vkbansal", "vkbansal/babel"]
+    rules:
+        spaced-comment: 0
+        no-mixed-requires: 0
+        no-var: 0
+        one-var: 0
+        object-shorthand: 0
