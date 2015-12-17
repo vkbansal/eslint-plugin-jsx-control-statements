@@ -13,12 +13,12 @@ $ npm install eslint
 If you installed `ESLint` globally, you have to install React plugin globally too. Otherwise, install it locally.
 
 ```sh
-$ npm install eslint-plugin-react
+$ npm install eslint-plugin-jsx-control-statements
 ```
 
 # Configuration
 
-Add `plugins` section and specify ESLint-plugin-React as a plugin.
+Add `plugins` section and specify ESLint-plugin-JSX-Control-Statements as a plugin.
 
 ```json
 {
@@ -53,6 +53,9 @@ Finally, enable all of the rules that you would like to use.
 
 * [jsx-if-condition](docs/rules/jsx-if-condition.md): Warn if `If` tag is missing `condition` attribute.
 * [jsx-if-single-child](docs/rules/jsx-if-single-child.md): Warn if `If` and `Else` tags must have single children.
+
+## Credits
+Thanks to @yannickcr for his awesome [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react).
 
 ## License
 
