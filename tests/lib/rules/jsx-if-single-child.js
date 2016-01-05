@@ -26,7 +26,7 @@ ruleTester.run("jsx-if-single-child", rule, {
                 jsx: true
             }
         }, {
-            code: "<If><div/><Else/><div/></If>",
+            code: "\n<If>\n\t<div/>\n<Else/>\n\t<div/>\n</If>",
             ecmaFeatures: {
                 jsx: true
             }
@@ -40,12 +40,22 @@ ruleTester.run("jsx-if-single-child", rule, {
             ecmaFeatures: {
                 jsx: true
             }
+        }, {
+            code: "\n<If>\n\t<foobar/>\n</If>",
+            ecmaFeatures: {
+                jsx: true
+            }
+        }, {
+            code: "\n<If>\n\t<div>\n\t\t<foo/>\n\t</div>\n<Else/>\n\t<div>\n\t\t<bar/>\n\t</div>\n</If>",
+            ecmaFeatures: {
+                jsx: true
+            }
         }
     ],
 
     invalid: [
         {
-            code: "<If><div/><div/></If>",
+            code: "\n<If>\n\t<div/>\n\t<div/>\n</If>",
             ecmaFeatures: {
                 jsx: true
             },
@@ -54,7 +64,7 @@ ruleTester.run("jsx-if-single-child", rule, {
                 type: "JSXOpeningElement"
             }]
         }, {
-            code: "<If><div/><div/><Else/><div/><div/></If>",
+            code: "\n<If>\n\t<div/>\n\t<div/>\n<Else/>\n\t<div/>\n\t<div/>\n</If>",
             ecmaFeatures: {
                 jsx: true
             },
@@ -63,7 +73,7 @@ ruleTester.run("jsx-if-single-child", rule, {
                 type: "JSXOpeningElement"
             }]
         }, {
-            code: "<If><div/><div/><Else/><div/></If>",
+            code: "\n<If>\n\t<div/>\n\t<div/>\n<Else/>\n\t<div/>\n</If>",
             ecmaFeatures: {
                 jsx: true
             },
@@ -72,7 +82,7 @@ ruleTester.run("jsx-if-single-child", rule, {
                 type: "JSXOpeningElement"
             }]
         }, {
-            code: "<If><div/><Else/><div/><div/></If>",
+            code: "\n<If>\n\t<div/>\n<Else/>\n\t<div/>\n\t<div/>\n</If>",
             ecmaFeatures: {
                 jsx: true
             },
