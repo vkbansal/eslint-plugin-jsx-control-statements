@@ -60,7 +60,7 @@ ruleTester.run("jsx-if-single-child", rule, {
                 jsx: true
             },
             errors: [{
-                message: "If tag must have single child.",
+                message: "'If' tag must have single child.",
                 type: "JSXOpeningElement"
             }]
         }, {
@@ -69,7 +69,7 @@ ruleTester.run("jsx-if-single-child", rule, {
                 jsx: true
             },
             errors: [{
-                message: "There must be single child between If and Else.",
+                message: "There must be single child between 'If' and 'Else'.",
                 type: "JSXOpeningElement"
             }]
         }, {
@@ -78,7 +78,7 @@ ruleTester.run("jsx-if-single-child", rule, {
                 jsx: true
             },
             errors: [{
-                message: "There must be single child between If and Else.",
+                message: "There must be single child between 'If' and 'Else'.",
                 type: "JSXOpeningElement"
             }]
         }, {
@@ -87,7 +87,7 @@ ruleTester.run("jsx-if-single-child", rule, {
                 jsx: true
             },
             errors: [{
-                message: "There must be single child between If and Else.",
+                message: "There must be single child between 'If' and 'Else'.",
                 type: "JSXOpeningElement"
             }]
         }

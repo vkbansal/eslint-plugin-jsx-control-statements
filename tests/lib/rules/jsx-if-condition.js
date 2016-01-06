@@ -41,7 +41,7 @@ ruleTester.run("jsx-if-condition", rule, {
                 jsx: true
             },
             errors: [{
-                message: "If tag must have a condition attribute.",
+                message: "'If' tag must have a 'condition' attribute.",
                 type: "JSXOpeningElement"
             }]
         }
