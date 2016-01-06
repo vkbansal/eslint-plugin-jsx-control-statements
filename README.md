@@ -19,12 +19,17 @@ $ npm install eslint-plugin-jsx-control-statements
 # Configuration
 
 Add `plugins` section and specify ESLint-plugin-JSX-Control-Statements as a plugin.
+Also add `If` and `For` to globals.
 
 ```json
 {
   "plugins": [
     "jsx-control-statements"
-  ]
+  ],
+  "globals": {
+      "If": true,
+      "For": true
+  }
 }
 ```
 
