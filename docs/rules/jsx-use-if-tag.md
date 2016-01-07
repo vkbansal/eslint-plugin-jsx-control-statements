@@ -27,8 +27,6 @@ The following patterns are not warnings:
     <div/>
 </If>
 
-// fill me in
-
 ```
 
 ## When Not To Use It
