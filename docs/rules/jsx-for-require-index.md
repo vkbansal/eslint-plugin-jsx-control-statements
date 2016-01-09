@@ -1,6 +1,6 @@
 # For tag must contain index attribute (jsx-for-require-index)
 
-Warn if `For` tag is missing `index` attribute.
+Warn if `For` tag is missing `index` attribute. And also marks the variable as defined.
 
 
 ## Rule Details

@@ -1,6 +1,6 @@
 # For tag must contain each attribute (jsx-for-require-each)
 
-Warn if `For` tag is missing `each` attribute.
+Warn if `For` tag is missing `each` attribute. And also marks the variable as defined.
 
 
 ## Rule Details

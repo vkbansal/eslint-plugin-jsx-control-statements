@@ -61,8 +61,8 @@ Finally, enable all of the rules that you would like to use.
 
 # List of supported rules
 
-* [jsx-for-require-each](docs/rules/jsx-for-require-each.md): Warn if `For` tag is missing `each` attribute.
-* [jsx-for-require-index](docs/rules/jsx-for-require-index.md): Warn if `For` tag is missing `index` attribute.
+* [jsx-for-require-each](docs/rules/jsx-for-require-each.md): Warn if `For` tag is missing `each` attribute. And also marks the variable as defined.
+* [jsx-for-require-index](docs/rules/jsx-for-require-index.md): Warn if `For` tag is missing `index` attribute. And also marks the variable as defined.
 * [jsx-for-require-of](docs/rules/jsx-for-require-of.md): Warn if `For` tag is missing `of` attribute.
 * [jsx-for-single-child](docs/rules/jsx-for-single-child.md): Warn if `For` tags does not have single child.
 * [jsx-if-require-condition](docs/rules/jsx-if-require-condition.md): Warn if `If` tag is missing `condition` attribute.
