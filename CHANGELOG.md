@@ -9,7 +9,7 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
-## master
+## v1.0.0
 
 ### Added
 - Rule `jsx-for-require-each`.
