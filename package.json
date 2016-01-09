@@ -11,8 +11,7 @@
     "coveralls": "cat ./reports/coverage/lcov.info | coveralls"
   },
   "files": [
-    "LICENSE",
-    "README.md",
+    "*.md",
     "index.js",
     "lib"
   ],
