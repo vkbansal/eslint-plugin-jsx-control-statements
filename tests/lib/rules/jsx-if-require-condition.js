@@ -18,7 +18,7 @@ var rule = require("../../../lib/rules/jsx-if-require-condition"),
 
 var ruleTester = new RuleTester();
 
-ruleTester.run("jsx-if-condition", rule, {
+ruleTester.run("jsx-if-require-condition", rule, {
 
     valid: [
         {
