@@ -9,6 +9,11 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
+## master
+
+### Changed
+- Renamed `jsx-if-condition` to `jsx-if-require-condition`.
+
 ## 0.2.0
 
 ### Added

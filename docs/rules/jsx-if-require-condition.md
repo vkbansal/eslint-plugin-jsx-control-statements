@@ -1,4 +1,4 @@
-# If tag must contain condition attribute (jsx-if-condition)
+# If tag must contain condition attribute (jsx-if-require-condition)
 
 Warn if `If` tag is missing `condition` attribute.
 

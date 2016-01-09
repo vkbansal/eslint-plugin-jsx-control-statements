@@ -9,7 +9,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/jsx-if-condition"),
+var rule = require("../../../lib/rules/jsx-if-require-condition"),
     RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
