@@ -11,6 +11,9 @@ All the changes can be found below. Order used:
 
 ## master
 
+### Added
+- Rule `jsx-for-require-index`.
+
 ### Changed
 - Renamed `jsx-if-condition` to `jsx-if-require-condition`.
 

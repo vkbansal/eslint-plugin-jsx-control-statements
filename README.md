@@ -51,7 +51,8 @@ Finally, enable all of the rules that you would like to use.
     "jsx-control-statements/jsx-if-require-condition": 1,
     "jsx-control-statements/jsx-if-single-child": 1,
     "jsx-control-statements/jsx-use-if-tag": 1,
-    "jsx-control-statements/jsx-for-single-child": 1
+    "jsx-control-statements/jsx-for-require-index": 1,
+    "jsx-control-statements/jsx-for-single-child": 1,
   }
 }
 ```
@@ -61,6 +62,7 @@ Finally, enable all of the rules that you would like to use.
 * [jsx-if-require-condition](docs/rules/jsx-if-require-condition.md): Warn if `If` tag is missing `condition` attribute.
 * [jsx-if-single-child](docs/rules/jsx-if-single-child.md): Warn if `If` and `Else` tags does not have single child.
 * [jsx-use-if-tag](docs/rules/jsx-use-if-tag.md): Use `If` tag instead of ternary operator.
+* [jsx-for-require-index](docs/rules/jsx-for-require-index.md): Warn if `For` tag is missing `index` attribute.
 * [jsx-for-single-child](docs/rules/jsx-for-single-child.md): Warn if `For` tags does not have single child.
 
 ## Credits
