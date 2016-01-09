@@ -12,7 +12,9 @@ All the changes can be found below. Order used:
 ## master
 
 ### Added
+- Rule `jsx-for-require-each`.
 - Rule `jsx-for-require-index`.
+- Rule `jsx-for-require-of`.
 
 ### Changed
 - Renamed `jsx-if-condition` to `jsx-if-require-condition`.
