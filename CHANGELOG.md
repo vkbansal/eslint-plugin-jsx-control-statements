@@ -9,6 +9,14 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
+## v1.0.1
+
+### Changed
+- Internal: Refactor code.
+
+### Fixed
+- Fix build on node v0.x and iojs.
+
 ## v1.0.0
 
 ### Added
