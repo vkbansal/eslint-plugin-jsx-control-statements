@@ -9,6 +9,11 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
+## v1.0.2
+
+### Fixed
+- Fixed: Allow JSX Expression to be used as child inside `If` and `For` tags.
+
 ## v1.0.1
 
 ### Changed
