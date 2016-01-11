@@ -50,6 +50,12 @@ ruleTester.run("jsx-if-single-child", rule, {
             ecmaFeatures: {
                 jsx: true
             }
+        }, {
+            code: "\n<If>\n\t{items.map(item => <span>{item}</span>)}\n</If>",
+            ecmaFeatures: {
+                jsx: true,
+                arrowFunctions: true
+            }
         }
     ],
 

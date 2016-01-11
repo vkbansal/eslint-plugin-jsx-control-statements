@@ -35,6 +35,11 @@ ruleTester.run("jsx-for-single-child", rule, {
             ecmaFeatures: {
                 jsx: true
             }
+        }, {
+            code: "\n<For>\n\t{foobar}\n</For>",
+            ecmaFeatures: {
+                jsx: true
+            }
         }
     ],
 
