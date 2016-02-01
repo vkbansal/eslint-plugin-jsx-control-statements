@@ -48,26 +48,31 @@ Finally, enable all of the rules that you would like to use.
 ```json
 {
   "rules": {
+    "jsx-control-statements/jsx-choose-not-empty": 1,
     "jsx-control-statements/jsx-for-require-each": 1,
     "jsx-control-statements/jsx-for-require-index": 1,
     "jsx-control-statements/jsx-for-require-of": 1,
     "jsx-control-statements/jsx-for-single-child": 1,
     "jsx-control-statements/jsx-if-require-condition": 1,
     "jsx-control-statements/jsx-if-single-child": 1,
-    "jsx-control-statements/jsx-use-if-tag": 1
+    "jsx-control-statements/jsx-otherwise-once-last": 1,
+    "jsx-control-statements/jsx-use-if-tag": 1,
+    "jsx-control-statements/jsx-when-require-condition": 1
   }
 }
 ```
 
 # List of supported rules
-
+* [jsx-choose-not-empty](docs/rules/jsx-choose-not-empty.md): Warn when `Choose` tag is empty or does not have at least one `When` tag as child.
 * [jsx-for-require-each](docs/rules/jsx-for-require-each.md): Warn if `For` tag is missing `each` attribute. And also marks the variable as defined.
 * [jsx-for-require-index](docs/rules/jsx-for-require-index.md): Warn if `For` tag is missing `index` attribute. And also marks the variable as defined.
 * [jsx-for-require-of](docs/rules/jsx-for-require-of.md): Warn if `For` tag is missing `of` attribute.
 * [jsx-for-single-child](docs/rules/jsx-for-single-child.md): Warn if `For` tags does not have single child.
 * [jsx-if-require-condition](docs/rules/jsx-if-require-condition.md): Warn if `If` tag is missing `condition` attribute.
 * [jsx-if-single-child](docs/rules/jsx-if-single-child.md): Warn if `If` and `Else` tags does not have single child.
+* [jsx-otherwise-once-last](docs/rules/jsx-otherwise-once-last.md): Warn when `Otherwise` tag is used more than once inside `Choose` and is not last child.
 * [jsx-use-if-tag](docs/rules/jsx-use-if-tag.md): Use `If` tag instead of ternary operator.
+* [jsx-when-require-condition](docs/rules/jsx-when-require-condition.md): Warn if `When` tag is missing `condition` attribute.
 
 ## Credits
 Thanks to @yannickcr for his awesome [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react).
