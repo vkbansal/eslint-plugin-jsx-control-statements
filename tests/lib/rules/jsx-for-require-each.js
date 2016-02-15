@@ -23,8 +23,10 @@ ruleTester.run("jsx-for-require-each", rule, {
     valid: [
         {
             code: "<For each={foo}><div/></For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -32,8 +34,10 @@ ruleTester.run("jsx-for-require-each", rule, {
     invalid: [
         {
             code: "<For><div/></For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'For' tag must have a 'each' attribute.",

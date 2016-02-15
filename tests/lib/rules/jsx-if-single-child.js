@@ -22,39 +22,53 @@ ruleTester.run("jsx-if-single-child", rule, {
     valid: [
         {
             code: "<If><div/></If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<If>\n\t<div/>\n<Else/>\n\t<div/>\n</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "<If>foobar</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "<If>foo<Else/>bar</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<If>\n\t<foobar/>\n</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<If>\n\t<div>\n\t\t<foo/>\n\t</div>\n<Else/>\n\t<div>\n\t\t<bar/>\n\t</div>\n</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<If>\n\t{items.map(item => <span>{item}</span>)}\n</If>",
-            ecmaFeatures: {
-                jsx: true,
-                arrowFunctions: true
+            parserOptions: {
+                ecmaVersion: 6,
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -62,8 +76,10 @@ ruleTester.run("jsx-if-single-child", rule, {
     invalid: [
         {
             code: "\n<If>\n\t<div/>\n\t<div/>\n</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'If' tag must have single child.",
@@ -71,8 +87,10 @@ ruleTester.run("jsx-if-single-child", rule, {
             }]
         }, {
             code: "\n<If>\n\t<div/>\n\t<div/>\n<Else/>\n\t<div/>\n\t<div/>\n</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'If' tag must have single child.",
@@ -83,8 +101,10 @@ ruleTester.run("jsx-if-single-child", rule, {
             }]
         }, {
             code: "\n<If>\n\t<div/>\n\t<div/>\n<Else/>\n\t<div/>\n</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'If' tag must have single child.",
@@ -92,8 +112,10 @@ ruleTester.run("jsx-if-single-child", rule, {
             }]
         }, {
             code: "\n<If>\n\t<div/>\n<Else/>\n\t<div/>\n\t<div/>\n</If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "There must be single child between 'Else' and ending 'If'.",

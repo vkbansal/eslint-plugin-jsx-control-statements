@@ -22,23 +22,31 @@ ruleTester.run("jsx-for-single-child", rule, {
     valid: [
         {
             code: "<For><div/></For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "<For>foobar</For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<For>\n\t<foobar/>\n</For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<For>\n\t{foobar}\n</For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -46,8 +54,10 @@ ruleTester.run("jsx-for-single-child", rule, {
     invalid: [
         {
             code: "\n<For>\n\t<div/>\n\t<div/>\n</For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'For' tag must have single child.",

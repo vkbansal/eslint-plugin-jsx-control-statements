@@ -23,8 +23,10 @@ ruleTester.run("jsx-for-require-index", rule, {
     valid: [
         {
             code: "<For index={foo}><div/></For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -32,8 +34,10 @@ ruleTester.run("jsx-for-require-index", rule, {
     invalid: [
         {
             code: "<For><div/></For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'For' tag must have a 'index' attribute.",

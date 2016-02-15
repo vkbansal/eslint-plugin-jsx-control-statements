@@ -22,23 +22,31 @@ ruleTester.run("jsx-otherwise-once-last", rule, {
     valid: [
         {
             code: "<Choose></Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "<Choose><When/></Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<Choose>\n\t<When/>\n</Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<Choose>\n\t<When/>\n\t<Otherwise/>\n</Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -46,8 +54,10 @@ ruleTester.run("jsx-otherwise-once-last", rule, {
     invalid: [
         {
             code: "<Choose><Otherwise/><Otherwise/></Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'Choose' tag must have only one 'Otherwise' tag.",
@@ -55,8 +65,10 @@ ruleTester.run("jsx-otherwise-once-last", rule, {
             }]
         }, {
             code: "<Choose><Otherwise/><div/></Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'Otherwise' tag must be last child.",
@@ -64,8 +76,10 @@ ruleTester.run("jsx-otherwise-once-last", rule, {
             }]
         }, {
             code: "<Choose><Otherwise/><Otherwise/><div/></Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'Choose' tag must have only one 'Otherwise' tag.",

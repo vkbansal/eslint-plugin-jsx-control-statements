@@ -1,5 +1,5 @@
 ---
-    extends: ["vkbansal", "vkbansal/babel"]
+    extends: ["vkbansal"]
     rules:
         strict: [1, "global"]
         spaced-comment: 0

@@ -23,11 +23,11 @@
   "bugs": "https://github.com/vkbansal/eslint-plugin-jsx-control-statements",
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta4",
-    "coveralls": "^2.11.4",
-    "eslint": "^1.10.2",
-    "eslint-config-vkbansal": "^0.1.2",
-    "istanbul": "^0.4.1",
-    "mocha": "^2.3.4"
+    "coveralls": "^2.11.6",
+    "eslint": "^2.0.0",
+    "eslint-config-vkbansal": "^0.4.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5"
   },
   "keywords": [
     "eslint-plugin",
@@ -38,6 +38,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "lodash": "^3.10.1"
+    "lodash": "^4.3.0"
   }
 }

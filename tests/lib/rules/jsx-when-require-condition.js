@@ -23,8 +23,10 @@ ruleTester.run("jsx-when-require-condition", rule, {
     valid: [
         {
             code: "<When condition={foo}><div/></When>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -32,8 +34,10 @@ ruleTester.run("jsx-when-require-condition", rule, {
     invalid: [
         {
             code: "<When><div/></When>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'When' tag must have a 'condition' attribute.",

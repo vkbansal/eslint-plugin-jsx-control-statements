@@ -23,13 +23,17 @@ ruleTester.run("jsx-if-require-condition", rule, {
     valid: [
         {
             code: "<If condition={foo}><div/></If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "<If condition={foo}><div/><Else/></If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -37,8 +41,10 @@ ruleTester.run("jsx-if-require-condition", rule, {
     invalid: [
         {
             code: "<If><div/></If>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'If' tag must have a 'condition' attribute.",

@@ -22,13 +22,17 @@ ruleTester.run("jsx-choose-not-empty", rule, {
     valid: [
         {
             code: "<Choose><When/></Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }, {
             code: "\n<Choose>\n\t<When/>\n</Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -36,8 +40,10 @@ ruleTester.run("jsx-choose-not-empty", rule, {
     invalid: [
         {
             code: "<Choose></Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'Choose' tag must not be empty.",
@@ -48,8 +54,10 @@ ruleTester.run("jsx-choose-not-empty", rule, {
             }]
         }, {
             code: "<Choose><div/></Choose>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'Choose' tag must have atleast one 'When' tag.",

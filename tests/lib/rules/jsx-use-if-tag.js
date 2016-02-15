@@ -22,8 +22,10 @@ ruleTester.run("jsx-use-if-tags", rule, {
     valid: [
         {
             code: "condition ? consequent : alternate",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -31,8 +33,10 @@ ruleTester.run("jsx-use-if-tags", rule, {
     invalid: [
         {
             code: "condition ? <Consequent/> : <Alternate/>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "Ternary opertor used. Use 'If' tag instead.",
@@ -40,8 +44,10 @@ ruleTester.run("jsx-use-if-tags", rule, {
             }]
         }, {
             code: "condition ? <Consequent/> : null",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "Ternary opertor used. Use 'If' tag instead.",
@@ -49,8 +55,10 @@ ruleTester.run("jsx-use-if-tags", rule, {
             }]
         }, {
             code: "condition ? <Consequent/> : Alternate",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "Ternary opertor used. Use 'If' tag instead.",
@@ -58,8 +66,10 @@ ruleTester.run("jsx-use-if-tags", rule, {
             }]
         }, {
             code: "condition ? Consequent : <Alternate/>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "Ternary opertor used. Use 'If' tag instead.",

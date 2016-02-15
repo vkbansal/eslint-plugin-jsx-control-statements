@@ -23,8 +23,10 @@ ruleTester.run("jsx-for-require-of", rule, {
     valid: [
         {
             code: "<For of={foo}><div/></For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         }
     ],
@@ -32,8 +34,10 @@ ruleTester.run("jsx-for-require-of", rule, {
     invalid: [
         {
             code: "<For><div/></For>",
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             },
             errors: [{
                 message: "'For' tag must have a 'of' attribute.",
