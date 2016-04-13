@@ -22,10 +22,9 @@
   "homepage": "https://github.com/vkbansal/eslint-plugin-jsx-control-statements",
   "bugs": "https://github.com/vkbansal/eslint-plugin-jsx-control-statements",
   "devDependencies": {
-    "babel-eslint": "^5.0.0-beta4",
     "coveralls": "^2.11.6",
     "eslint": "^2.0.0",
-    "eslint-config-vkbansal": "^0.4.0",
+    "eslint-config-vkbansal": "^1.0.0",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5"
   },
