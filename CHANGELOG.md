@@ -9,6 +9,14 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
+## master
+
+### Removed
+ - removed `jsx-for-single-child` (Multiple children are now supported).
+ - removed `jsx-if-single-child` (Multiple children are now supported).
+ - removed `jsx-for-require-index`.
+ - removed `lodash` dependency.
+
 ## v1.0.2
 
 ### Fixed
