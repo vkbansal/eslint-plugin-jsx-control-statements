@@ -9,7 +9,7 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
-## master
+## v2.0.0
 
 ### Removed
  - removed `jsx-for-single-child` (Multiple children are now supported).
