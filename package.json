@@ -36,7 +36,5 @@
     "jsx-control-statements"
   ],
   "license": "MIT",
-  "dependencies": {
-    "lodash": "^4.3.0"
-  }
+  "dependencies": {}
 }
