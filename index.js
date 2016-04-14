@@ -8,6 +8,7 @@ module.exports = {
         "jsx-if-require-condition": require("./lib/rules/jsx-if-require-condition"),
         "jsx-otherwise-once-last": require("./lib/rules/jsx-otherwise-once-last"),
         "jsx-use-if-tag": require("./lib/rules/jsx-use-if-tag"),
-        "jsx-when-require-condition": require("./lib/rules/jsx-when-require-condition")
+        "jsx-when-require-condition": require("./lib/rules/jsx-when-require-condition"),
+        "jcs-no-undef": require("./lib/rules/jcs-no-undef")
     }
 };
