@@ -9,6 +9,11 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
+## v2.0.1
+
+## Fixed
+- Fixed working on node `v0.10` and `v0.12`.
+
 ## v2.0.0
 
 ### Removed
