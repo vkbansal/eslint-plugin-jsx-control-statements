@@ -19,42 +19,42 @@ var ruleTester = new RuleTester();
 ruleTester.run("jsx-jcs-no-undef", rule, {
     valid: [
         {
-            code: `
-                <For each="element" of={this.props.elements} index="idx">
-                    {element.textValue}
-                    {idx}
-                    <div>
-                        {element.textValue}
-                        {idx}
-                    </div>
-                </For>
-            `,
+            code:
+                '<For each="element" of={this.props.elements} index="idx">' +
+                    '{element.textValue}' +
+                    '{idx}' +
+                    '<div>' +
+                        '{element.textValue}' +
+                        '{idx}' +
+                    '</div>' +
+                '</For>'
+            ,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             }
         }, {
-            code: `
-                <For each="element" of={this.props.elements} index="idx">
-                    <AnotherElement foo={element} bar={idx}>
-                        <YetAnotherElement foo={element} bar={idx} />
-                    </AnotherElement>
-                </For>
-            `,
+            code:
+                '<For each="element" of={this.props.elements} index="idx">' +
+                    '<AnotherElement foo={element} bar={idx}>' +
+                        '<YetAnotherElement foo={element} bar={idx} />' +
+                    '</AnotherElement>' +
+                '</For>'
+            ,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             }
         }, {
-            code: `
-                <For each="element1" of={this.props.elements} index="idx1">
-                    <For each="element2" of={this.props.elements} index="idx2">
-                        {element1} {element2} {idx1} {idx2}
-                    </For>
-                </For>
-            `,
+            code:
+                '<For each="element1" of={this.props.elements} index="idx1">' +
+                    '<For each="element2" of={this.props.elements} index="idx2">' +
+                        '{element1} {element2} {idx1} {idx2}' +
+                    '</For>' +
+                '</For>'
+            ,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
@@ -134,11 +134,11 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
 
     invalid: [
         {
-            code: `
-                <For each="element" of={this.props.elements} index="idx">
-                    {wrongElement}
-                </For>
-            `,
+            code:
+                '<For each="element" of={this.props.elements} index="idx">' +
+                    '{wrongElement}' +
+                '</For>'
+            ,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
@@ -147,11 +147,11 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             errors: [{message: "'wrongElement' is not defined.", type: "Identifier"}]
         },
         {
-            code: `
-                <For each="element" of={this.props.elements} index="idx">
-                    <Blah key={wrongElement}></Blah>
-                </For>
-            `,
+            code:
+                '<For each="element" of={this.props.elements} index="idx">' +
+                    '<Blah key={wrongElement}></Blah>' +
+                '</For>'
+            ,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
@@ -160,13 +160,13 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             errors: [{message: "'wrongElement' is not defined.", type: "Identifier"}]
         },
         {
-            code: `
-                <For each="element" of={this.props.elements} index="idx">
-                    <WrapperElement>
-                        {wrongElement}
-                    </WrapperElement>
-                </For>
-            `,
+            code:
+                '<For each="element" of={this.props.elements} index="idx">' +
+                    '<WrapperElement>' +
+                        '{wrongElement}' +
+                    '</WrapperElement>' +
+                '</For>'
+            ,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
@@ -175,13 +175,13 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             errors: [{message: "'wrongElement' is not defined.", type: "Identifier"}]
         },
         {
-            code: `
-                <For each="element" of={this.props.elements} index="idx">
-                    <WrapperElement>
-                        <Blah key={wrongElement}></Blah>
-                    </WrapperElement>
-                </For>
-            `,
+            code:
+                '<For each="element" of={this.props.elements} index="idx">' +
+                    '<WrapperElement>' +
+                        '<Blah key={wrongElement}></Blah>' +
+                    '</WrapperElement>' +
+                '</For>'
+            ,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
@@ -189,14 +189,14 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             },
             errors: [{message: "'wrongElement' is not defined.", type: "Identifier"}]
         }, {
-            code: `
-                <For each="element1" of={this.props.elements} index="idx1">
-                    {idx2} {element2}
-                    <For each="element2" of={this.props.elements} index="idx2">
-                        {element1} {idx1}
-                    </For>
-                </For>
-            `,
+            code:
+                '<For each="element1" of={this.props.elements} index="idx1">' +
+                    '{idx2} {element2}' +
+                    '<For each="element2" of={this.props.elements} index="idx2">' +
+                        '{element1} {idx1}' +
+                    '</For>' +
+                '</For>'
+            ,
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
