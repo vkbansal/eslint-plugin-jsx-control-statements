@@ -16,21 +16,17 @@ If you installed `ESLint` globally, you have to install React plugin globally to
 $ npm install eslint-plugin-jsx-control-statements
 ```
 
-# Configuration
+# Configuration (Simple)
 
-Add `plugins` section and specify ESLint-plugin-JSX-Control-Statements as a plugin.
-Also add `If`, `Else` and `For` to globals.
+Add `plugins` section and specify ESLint-plugin-JSX-Control-Statements as a plugin and plugin:jsx-control-statements/recommended
+to "extends"
 
 ```json
 {
   "plugins": [
     "jsx-control-statements"
   ],
-  "globals": {
-      "If": true,
-      "Else": true,
-      "For": true
-  }
+  "extends": ["plugin:jsx-control-statements/recommended"]
 }
 ```
 
@@ -42,11 +38,11 @@ If it is not already the case you must also configure `ESLint` to support JSX.
     "jsx": true
   }
 }
-```
 
-Finally, enable all of the rules that you would like to use.
+# Configuration (Advanced)
+The plugin comes with a number of rules and an environment that sets the control statements (`<If>`, `<For>` etc) as global variables:
 
-```json
+```js
 {
   "rules": {
     "jsx-control-statements/jsx-choose-not-empty": 1,
@@ -55,7 +51,12 @@ Finally, enable all of the rules that you would like to use.
     "jsx-control-statements/jsx-if-require-condition": 1,
     "jsx-control-statements/jsx-otherwise-once-last": 1,
     "jsx-control-statements/jsx-use-if-tag": 1,
-    "jsx-control-statements/jsx-when-require-condition": 1
+    "jsx-control-statements/jsx-when-require-condition": 1,
+    "jsx-control-statements/jsx-jcs-no-undef": 1,
+    "no-undef": 0 // Replace this with jsx-jcs-no-undef
+  },
+  env: {
+    "jsx-control-statements/jsx-control-statements": true
   }
 }
 ```
@@ -68,12 +69,13 @@ Finally, enable all of the rules that you would like to use.
 * [jsx-otherwise-once-last](docs/rules/jsx-otherwise-once-last.md): Warn when `Otherwise` tag is used more than once inside `Choose` and is not last child.
 * [jsx-use-if-tag](docs/rules/jsx-use-if-tag.md): Use `If` tag instead of ternary operator.
 * [jsx-when-require-condition](docs/rules/jsx-when-require-condition.md): Warn if `When` tag is missing `condition` attribute.
+* [jsx-jcs-no-undef](docs/rules/jsx-when-require-condition.md): Replaces the built-in no-undef rule with one that is tolerant of variables expressed in `<For>`
+     `each` and `index` attributes. Note that to stop getting errors from `no-undef` you have to turn it off and this on.
 
 ## Credits
 Thanks to @yannickcr for his awesome [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react).
 
 ## License
-
 [MIT License](http://www.opensource.org/licenses/mit-license.php). Copyright(c) [Vivek Kumar Bansal](http://vkbansal.me/)
 
 
