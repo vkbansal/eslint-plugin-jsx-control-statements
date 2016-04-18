@@ -74,8 +74,7 @@ The plugin comes with a number of rules and an environment that sets the control
 * [jsx-otherwise-once-last](docs/rules/jsx-otherwise-once-last.md): Warn when `Otherwise` tag is used more than once inside `Choose` and is not last child.
 * [jsx-use-if-tag](docs/rules/jsx-use-if-tag.md): Use `If` tag instead of ternary operator.
 * [jsx-when-require-condition](docs/rules/jsx-when-require-condition.md): Warn if `When` tag is missing `condition` attribute.
-* [jsx-jcs-no-undef](docs/rules/jsx-jcs-no-undef.md): Replaces the built-in no-undef rule with one that is tolerant of variables expressed in `<For>`
-     `each` and `index` attributes. Note that to stop getting errors from `no-undef` you have to turn it off and this on.
+* [jsx-jcs-no-undef](docs/rules/jsx-jcs-no-undef.md): Replaces the built-in `no-undef` rule with one that is tolerant of variables expressed in `<For>` (`each` and `index` attributes). Note that to stop getting errors from `no-undef` you have to turn it off and this on.
 
 ## Credits
 Thanks to @yannickcr for his awesome [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react).

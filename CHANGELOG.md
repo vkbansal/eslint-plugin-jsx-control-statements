@@ -9,6 +9,11 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
+## v2.1.0
+
+### Added
+- Added `jsx-jcs-no-undef` rule that replaces the built-in `no-undef` rule with one that is tolerant of variables expressed in `<For>`.
+
 ## v2.0.1
 
 ## Fixed
