@@ -1,6 +1,10 @@
 # ESLint-plugin-JSX-control-statements
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][deps-image]][deps-url] [![Coverage Status][coverage-image]][coverage-url] [![Code Climate][climate-image]][climate-url]
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][deps-image]][deps-url]
+[![Coverage Status][coverage-image]][coverage-url]
+[![Code Climate][climate-image]][climate-url]
 
 ## Installation
 
@@ -16,7 +20,7 @@ If you installed `ESLint` globally, you have to install React plugin globally to
 $ npm install eslint-plugin-jsx-control-statements
 ```
 
-# Configuration (Simple)
+## Configuration (Simple)
 
 Add `plugins` section and specify ESLint-plugin-JSX-Control-Statements as a plugin and plugin:jsx-control-statements/recommended
 to "extends"
@@ -38,8 +42,9 @@ If it is not already the case you must also configure `ESLint` to support JSX.
     "jsx": true
   }
 }
+```
 
-# Configuration (Advanced)
+## Configuration (Advanced)
 The plugin comes with a number of rules and an environment that sets the control statements (`<If>`, `<For>` etc) as global variables:
 
 ```js
