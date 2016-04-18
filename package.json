@@ -36,5 +36,8 @@
     "jsx-control-statements"
   ],
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {
+    "eslint": ">=0.8.0"
+  }
 }

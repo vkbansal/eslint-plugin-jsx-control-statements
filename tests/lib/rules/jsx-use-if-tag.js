@@ -39,7 +39,7 @@ ruleTester.run("jsx-use-if-tags", rule, {
                 }
             },
             errors: [{
-                message: "Ternary opertor used. Use 'If' tag instead.",
+                message: "Ternary operator used. Use 'If' tag instead.",
                 type: "ConditionalExpression"
             }]
         }, {
@@ -50,7 +50,7 @@ ruleTester.run("jsx-use-if-tags", rule, {
                 }
             },
             errors: [{
-                message: "Ternary opertor used. Use 'If' tag instead.",
+                message: "Ternary operator used. Use 'If' tag instead.",
                 type: "ConditionalExpression"
             }]
         }, {
@@ -61,7 +61,7 @@ ruleTester.run("jsx-use-if-tags", rule, {
                 }
             },
             errors: [{
-                message: "Ternary opertor used. Use 'If' tag instead.",
+                message: "Ternary operator used. Use 'If' tag instead.",
                 type: "ConditionalExpression"
             }]
         }, {
@@ -72,7 +72,7 @@ ruleTester.run("jsx-use-if-tags", rule, {
                 }
             },
             errors: [{
-                message: "Ternary opertor used. Use 'If' tag instead.",
+                message: "Ternary operator used. Use 'If' tag instead.",
                 type: "ConditionalExpression"
             }]
         }
