@@ -9,6 +9,11 @@ All the changes can be found below. Order used:
 - Fixed
 - Security
 
+## v2.1.1
+
+### Fixed
+- Fixed error when using nested `For` loops.
+
 ## v2.1.0
 
 ### Added
