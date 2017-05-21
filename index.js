@@ -9,7 +9,8 @@ module.exports = {
                 "For": true,
                 "When": true,
                 "Choose": true,
-                "Otherwise": true
+                "Otherwise": true,
+                "With": true
             }
         }
     },
