@@ -18,6 +18,7 @@ var ruleTester = new RuleTester();
 
 ruleTester.run("jsx-jcs-no-undef", rule, {
     valid: [
+        // <For> statement
         {
             code:
                 '<For each="element" of={this.props.elements} index="idx">' +
@@ -54,6 +55,49 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
                         '{element1} {element2} {idx1} {idx2}' +
                     '</For>' +
                 '</For>'
+            ,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            }
+        },
+
+        // <With> statement
+        {
+            code:
+                '<With value={47}>' +
+                    '{value}' +
+                    '<div>' +
+                        '{value}' +
+                    '</div>' +
+                '</With>'
+            ,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            }
+        }, {
+            code:
+                '<With value={47} anotherValue={"foo"}>' +
+                    '<AnotherElement foo={value} bar={anotherValue}>' +
+                        '<YetAnotherElement foo={value} bar={anotherValue} />' +
+                    '</AnotherElement>' +
+                '</With>'
+            ,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            }
+        }, {
+            code:
+                '<With value={47}>' +
+                    '<With anotherValue={"foo"}>' +
+                        '{value} {anotherValue}' +
+                    '</With>' +
+                '</With>'
             ,
             parserOptions: {
                 ecmaFeatures: {
@@ -103,8 +147,8 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             parserOptions: {sourceType: "module"}
         },
         {code: "var a; [a] = [0];", parserOptions: {ecmaVersion: 6}},
-        {code: "var a; ({a}) = {};", parserOptions: {ecmaVersion: 6}},
-        {code: "var a; ({b: a}) = {};", parserOptions: {ecmaVersion: 6}},
+        {code: "var a; ({a} = {});", parserOptions: {ecmaVersion: 6}},
+        {code: "var a; ({b: a} = {});", parserOptions: {ecmaVersion: 6}},
         {code: "var obj; [obj.a, obj.b] = [0, 1];", parserOptions: {ecmaVersion: 6}},
         {code: "URLSearchParams;", env: {browser: true}},
 
@@ -133,6 +177,7 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
     ],
 
     invalid: [
+        // <For> statement
         {
             code:
                 '<For each="element" of={this.props.elements} index="idx">' +
@@ -208,6 +253,81 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             ]
         },
 
+        // <With> statement
+        {
+            code:
+                '<With value={47}>' +
+                    '{wrongElement}' +
+                '</With>'
+            ,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            },
+            errors: [{message: "'wrongElement' is not defined.", type: "Identifier"}]
+        },
+        {
+            code:
+                '<With value={47}>' +
+                    '<Blah key={wrongElement}></Blah>' +
+                '</With>'
+            ,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            },
+            errors: [{message: "'wrongElement' is not defined.", type: "Identifier"}]
+        },
+        {
+            code:
+                '<With value={47}>' +
+                    '<WrapperElement>' +
+                        '{wrongElement}' +
+                    '</WrapperElement>' +
+                '</With>'
+            ,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            },
+            errors: [{message: "'wrongElement' is not defined.", type: "Identifier"}]
+        },
+        {
+            code:
+                '<With value={47}>' +
+                    '<WrapperElement>' +
+                        '<Blah key={wrongElement}></Blah>' +
+                    '</WrapperElement>' +
+                '</With>'
+            ,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            },
+            errors: [{message: "'wrongElement' is not defined.", type: "Identifier"}]
+        }, {
+            code:
+                '<With value={47}>' +
+                    '{anotherValue}' +
+                    '<With anotherValue={this.props.elements}>' +
+                        '{value}' +
+                    '</With>' +
+                '</With>'
+            ,
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
+            },
+            errors: [
+                {message: "'anotherValue' is not defined.", type: "Identifier"}
+            ]
+        },
+
         // standard no-undef rules follow:
         {code: "a = 1;", errors: [{message: "'a' is not defined.", type: "Identifier"}]},
         {
@@ -230,8 +350,8 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             parserOptions: {ecmaVersion: 6, ecmaFeatures: {jsx: true}}
         },
         {code: "[a] = [0];", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
-        {code: "({a}) = {};", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
-        {code: "({b: a}) = {};", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
+        {code: "({a} = {});", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
+        {code: "({b: a} = {});", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
         {
             code: "[obj.a, obj.b] = [0, 1];",
             parserOptions: {ecmaVersion: 6},

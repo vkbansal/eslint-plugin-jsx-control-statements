@@ -1,7 +1,7 @@
-# Disallow Undeclared Variables, While Treating Each and Index in For statements as declared (jsx-jcs-no-undef)
+# Disallow Undeclared Variables, While Treating Each and Index in For and keys in With statements as declared (jsx-jcs-no-undef)
 
 This rule is the same as the generic eslint no-undef rule (see http://eslint.org/docs/rules/no-undef) except with an
-exception built in for variables that are implicitly declared by `<For>` statements. Note that this includes no-undef's
+exception built in for variables that are implicitly declared by `<For>` and `<With>` statements. Note that this includes no-undef's
 code and completely replaces it rather than supplementing it - if this rule is on, no-undef should be off. It is
 compatible with no-undef's options and `/* global */` declarations.
 
@@ -20,6 +20,12 @@ b = 10;
 </For>
 ```
 
+```js
+<With foo={47}>
+  {bar}
+</With>
+```
+
 The following patterns are not warnings:
 
 ```js
@@ -28,17 +34,23 @@ The following patterns are not warnings:
 </For>
 ```
 
+```js
+<With foo={47}>
+  {foo}
+</With>
+```
+
 ## Options
 
 * `typeof` set to true will warn for variables used inside typeof check (Default false).
 
 ## When Not To Use It
 
-You'll only need this if you're using <For> statements.
+You'll only need this if you're using <For> or <With> statements.
 
 ## Compatibility
 
-This rule is completely compatible with ESLint no-undef, except in the case of `<For>` statements.
+This rule is completely compatible with ESLint no-undef, except in the case of `<For>` and `<With>` statements.
 
 ## Further Reading
 - [ESLint no-undef documentation](http://eslint.org/docs/rules/no-undef)
