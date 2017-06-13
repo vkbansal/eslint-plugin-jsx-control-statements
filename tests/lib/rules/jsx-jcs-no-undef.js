@@ -147,8 +147,8 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             parserOptions: {sourceType: "module"}
         },
         {code: "var a; [a] = [0];", parserOptions: {ecmaVersion: 6}},
-        {code: "var a; ({a}) = {};", parserOptions: {ecmaVersion: 6}},
-        {code: "var a; ({b: a}) = {};", parserOptions: {ecmaVersion: 6}},
+        {code: "var a; ({a} = {});", parserOptions: {ecmaVersion: 6}},
+        {code: "var a; ({b: a} = {});", parserOptions: {ecmaVersion: 6}},
         {code: "var obj; [obj.a, obj.b] = [0, 1];", parserOptions: {ecmaVersion: 6}},
         {code: "URLSearchParams;", env: {browser: true}},
 
@@ -350,8 +350,8 @@ ruleTester.run("jsx-jcs-no-undef", rule, {
             parserOptions: {ecmaVersion: 6, ecmaFeatures: {jsx: true}}
         },
         {code: "[a] = [0];", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
-        {code: "({a}) = {};", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
-        {code: "({b: a}) = {};", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
+        {code: "({a} = {});", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
+        {code: "({b: a} = {});", parserOptions: {ecmaVersion: 6}, errors: [{message: "'a' is not defined."}]},
         {
             code: "[obj.a, obj.b] = [0, 1];",
             parserOptions: {ecmaVersion: 6},
