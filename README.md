@@ -66,6 +66,21 @@ The plugin comes with a number of rules and an environment that sets the control
 }
 ```
 
+### Important:
+
+After version 7.0.0 of `eslint-plugin-react` the rule `react/jsx-no-undef` it's not checking globals by default anymore.
+So you need to enable this to avoid lint errors telling that "If", "Choose", etc. are not defined. To fix this add to your
+rules:
+
+```
+ {
+   "rules": {
+     "react/jsx-no-undef": [2, { "allowGlobals": true }]
+   }
+    
+ }
+```
+
 # List of supported rules
 * [jsx-choose-not-empty](docs/rules/jsx-choose-not-empty.md): Warn when `Choose` tag is empty or does not have at least one `When` tag as child.
 * [jsx-for-require-each](docs/rules/jsx-for-require-each.md): Warn if `For` tag is missing `each` attribute. And also marks the variable as defined.
