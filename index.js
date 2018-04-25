@@ -29,6 +29,7 @@ module.exports = {
             env: {
               "jsx-control-statements/jsx-control-statements": true
             },
+            plugins: ["jsx-control-statements"],
             rules: {
                 "jsx-control-statements/jsx-choose-not-empty": 1,
                 "jsx-control-statements/jsx-for-require-each": 1,
