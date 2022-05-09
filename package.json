@@ -1,11 +1,12 @@
 {
   "name": "eslint-plugin-jsx-control-statements",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "author": "Vivek Kumar Bansal <vkb0310@gmail.com>",
   "description": "jsx-control-statements specific linting rules for ESLint",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && npm run unit-test",
+    "test": "npm run lint && npm run fmt && npm run unit-test",
+    "fmt": "prettier --check lib/**/*.js",
     "lint": "eslint lib/",
     "unit-test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha tests/**/*.js -- --reporter dot",
     "coveralls": "cat ./reports/coverage/lcov.info | coveralls"
@@ -22,11 +23,11 @@
   "homepage": "https://github.com/vkbansal/eslint-plugin-jsx-control-statements",
   "bugs": "https://github.com/vkbansal/eslint-plugin-jsx-control-statements",
   "devDependencies": {
-    "coveralls": "^2.11.6",
-    "eslint": "^2.0.0",
-    "eslint-config-vkbansal": "^1.0.0",
-    "istanbul": "^0.4.2",
-    "mocha": "^2.4.5"
+    "coveralls": "^3.1.1",
+    "eslint": "^8.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^10.0.0",
+    "prettier": "^2.6.2"
   },
   "keywords": [
     "eslint-plugin",
@@ -36,8 +37,7 @@
     "jsx-control-statements"
   ],
   "license": "MIT",
-  "dependencies": {},
   "peerDependencies": {
-    "eslint": ">=0.8.0"
+    "eslint": ">=6.0.0"
   }
 }
