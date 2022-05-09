@@ -5,11 +5,11 @@
   "description": "jsx-control-statements specific linting rules for ESLint",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && npm run fmt && npm run unit-test",
+    "test": "mocha tests/**/*.js",
     "fmt": "prettier --check lib/**/*.js",
     "lint": "eslint lib/",
-    "unit-test": "istanbul cover --dir reports/coverage node_modules/mocha/bin/_mocha tests/**/*.js -- --reporter dot",
-    "coveralls": "cat ./reports/coverage/lcov.info | coveralls"
+    "coverage": "nyc --reporter=lcov npm run test",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "files": [
     "*.md",
@@ -25,8 +25,8 @@
   "devDependencies": {
     "coveralls": "^3.1.1",
     "eslint": "^8.0.0",
-    "istanbul": "^0.4.5",
     "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
     "prettier": "^2.6.2"
   },
   "keywords": [

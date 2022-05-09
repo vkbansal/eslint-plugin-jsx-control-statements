@@ -1,3 +1,5 @@
 node_modules/
 reports/
 *.log
+.nyc_output
+coverage
