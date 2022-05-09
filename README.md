@@ -53,6 +53,7 @@ The plugin comes with a number of rules and an environment that sets the control
     "jsx-control-statements/jsx-choose-not-empty": 1,
     "jsx-control-statements/jsx-for-require-each": 1,
     "jsx-control-statements/jsx-for-require-of": 1,
+    "jsx-control-statements/jsx-for-require-body": 1,
     "jsx-control-statements/jsx-if-require-condition": 1,
     "jsx-control-statements/jsx-otherwise-once-last": 1,
     "jsx-control-statements/jsx-use-if-tag": 1,
@@ -85,6 +86,7 @@ rules:
 * [jsx-choose-not-empty](docs/rules/jsx-choose-not-empty.md): Warn when `Choose` tag is empty or does not have at least one `When` tag as child.
 * [jsx-for-require-each](docs/rules/jsx-for-require-each.md): Warn if `For` tag is missing `each` attribute. And also marks the variable as defined.
 * [jsx-for-require-of](docs/rules/jsx-for-require-of.md): Warn if `For` tag is missing `of` attribute.
+* [jsx-for-require-body](docs/rules/jsx-for-require-body.md): Warn if `For` tag is missing `body` attribute.
 * [jsx-if-require-condition](docs/rules/jsx-if-require-condition.md): Warn if `If` tag is missing `condition` attribute.
 * [jsx-otherwise-once-last](docs/rules/jsx-otherwise-once-last.md): Warn when `Otherwise` tag is used more than once inside `Choose` and is not last child.
 * [jsx-use-if-tag](docs/rules/jsx-use-if-tag.md): Use `If` tag instead of ternary operator.
