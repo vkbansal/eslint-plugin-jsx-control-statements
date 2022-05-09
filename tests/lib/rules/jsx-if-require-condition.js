@@ -19,7 +19,6 @@ var rule = require("../../../lib/rules/jsx-if-require-condition"),
 var ruleTester = new RuleTester();
 
 ruleTester.run("jsx-if-require-condition", rule, {
-
     valid: [
         {
             code: "<If condition={foo}><div/></If>",
@@ -28,7 +27,8 @@ ruleTester.run("jsx-if-require-condition", rule, {
                     jsx: true
                 }
             }
-        }, {
+        },
+        {
             code: "<If condition={foo}><div/><Else/></If>",
             parserOptions: {
                 ecmaFeatures: {
@@ -46,10 +46,12 @@ ruleTester.run("jsx-if-require-condition", rule, {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "'If' tag must have a 'condition' attribute.",
-                type: "JSXOpeningElement"
-            }]
+            errors: [
+                {
+                    message: "'If' tag must have a 'condition' attribute.",
+                    type: "JSXOpeningElement"
+                }
+            ]
         }
     ]
 });

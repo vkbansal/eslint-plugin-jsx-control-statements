@@ -19,7 +19,6 @@ var rule = require("../../../lib/rules/jsx-for-require-of"),
 var ruleTester = new RuleTester();
 
 ruleTester.run("jsx-for-require-of", rule, {
-
     valid: [
         {
             code: "<For of={foo}><div/></For>",
@@ -39,10 +38,12 @@ ruleTester.run("jsx-for-require-of", rule, {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "'For' tag must have a 'of' attribute.",
-                type: "JSXOpeningElement"
-            }]
+            errors: [
+                {
+                    message: "'For' tag must have a 'of' attribute.",
+                    type: "JSXOpeningElement"
+                }
+            ]
         }
     ]
 });

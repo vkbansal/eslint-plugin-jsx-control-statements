@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/**/*.js",
-    "fmt": "prettier --check lib/**/*.js",
+    "fmt": "prettier --check lib/**/*.js tests/**/*.js",
+    "fmt:fix": "prettier --write lib/**/*.js tests/**/*.js",
     "lint": "eslint lib/",
     "coverage": "nyc --reporter=lcov npm run test",
     "coveralls": "cat ./coverage/lcov.info | coveralls"

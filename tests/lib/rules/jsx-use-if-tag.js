@@ -18,7 +18,6 @@ var rule = require("../../../lib/rules/jsx-use-if-tag"),
 var ruleTester = new RuleTester();
 
 ruleTester.run("jsx-use-if-tags", rule, {
-
     valid: [
         {
             code: "condition ? consequent : alternate",
@@ -38,43 +37,54 @@ ruleTester.run("jsx-use-if-tags", rule, {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "Ternary operator used. Use 'If' tag instead.",
-                type: "ConditionalExpression"
-            }]
-        }, {
+            errors: [
+                {
+                    message: "Ternary operator used. Use 'If' tag instead.",
+                    type: "ConditionalExpression"
+                }
+            ]
+        },
+        {
             code: "condition ? <Consequent/> : null",
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "Ternary operator used. Use 'If' tag instead.",
-                type: "ConditionalExpression"
-            }]
-        }, {
+            errors: [
+                {
+                    message: "Ternary operator used. Use 'If' tag instead.",
+                    type: "ConditionalExpression"
+                }
+            ]
+        },
+        {
             code: "condition ? <Consequent/> : Alternate",
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "Ternary operator used. Use 'If' tag instead.",
-                type: "ConditionalExpression"
-            }]
-        }, {
+            errors: [
+                {
+                    message: "Ternary operator used. Use 'If' tag instead.",
+                    type: "ConditionalExpression"
+                }
+            ]
+        },
+        {
             code: "condition ? Consequent : <Alternate/>",
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "Ternary operator used. Use 'If' tag instead.",
-                type: "ConditionalExpression"
-            }]
+            errors: [
+                {
+                    message: "Ternary operator used. Use 'If' tag instead.",
+                    type: "ConditionalExpression"
+                }
+            ]
         }
     ]
 });

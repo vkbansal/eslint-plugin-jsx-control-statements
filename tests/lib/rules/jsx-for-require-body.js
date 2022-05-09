@@ -23,10 +23,10 @@ ruleTester.run("jsx-for-require-body", rule, {
             code: "<For body={renderItem}/>",
             parserOptions: {
                 ecmaFeatures: {
-                    jsx: true,
-                },
-            },
-        },
+                    jsx: true
+                }
+            }
+        }
     ],
 
     invalid: [
@@ -34,15 +34,15 @@ ruleTester.run("jsx-for-require-body", rule, {
             code: "<For each={foo}><div/></For>",
             parserOptions: {
                 ecmaFeatures: {
-                    jsx: true,
-                },
+                    jsx: true
+                }
             },
             errors: [
                 {
                     message: "'For' tag must have a 'body' attribute.",
-                    type: "JSXOpeningElement",
-                },
-            ],
-        },
-    ],
+                    type: "JSXOpeningElement"
+                }
+            ]
+        }
+    ]
 });

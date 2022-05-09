@@ -18,7 +18,6 @@ var rule = require("../../../lib/rules/jsx-otherwise-once-last"),
 var ruleTester = new RuleTester();
 
 ruleTester.run("jsx-otherwise-once-last", rule, {
-
     valid: [
         {
             code: "<Choose></Choose>",
@@ -27,21 +26,24 @@ ruleTester.run("jsx-otherwise-once-last", rule, {
                     jsx: true
                 }
             }
-        }, {
+        },
+        {
             code: "<Choose><When/></Choose>",
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             }
-        }, {
+        },
+        {
             code: "\n<Choose>\n\t<When/>\n</Choose>",
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             }
-        }, {
+        },
+        {
             code: "\n<Choose>\n\t<When/>\n\t<Otherwise/>\n</Choose>",
             parserOptions: {
                 ecmaFeatures: {
@@ -59,32 +61,40 @@ ruleTester.run("jsx-otherwise-once-last", rule, {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "'Choose' tag must have only one 'Otherwise' tag.",
-                type: "JSXOpeningElement"
-            }]
-        }, {
+            errors: [
+                {
+                    message: "'Choose' tag must have only one 'Otherwise' tag.",
+                    type: "JSXOpeningElement"
+                }
+            ]
+        },
+        {
             code: "<Choose><Otherwise/><div/></Choose>",
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "'Otherwise' tag must be last child.",
-                type: "JSXOpeningElement"
-            }]
-        }, {
+            errors: [
+                {
+                    message: "'Otherwise' tag must be last child.",
+                    type: "JSXOpeningElement"
+                }
+            ]
+        },
+        {
             code: "<Choose><Otherwise/><Otherwise/><div/></Choose>",
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "'Choose' tag must have only one 'Otherwise' tag.",
-                type: "JSXOpeningElement"
-            }]
+            errors: [
+                {
+                    message: "'Choose' tag must have only one 'Otherwise' tag.",
+                    type: "JSXOpeningElement"
+                }
+            ]
         }
     ]
 });

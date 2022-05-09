@@ -19,7 +19,6 @@ var rule = require("../../../lib/rules/jsx-for-require-each"),
 var ruleTester = new RuleTester();
 
 ruleTester.run("jsx-for-require-each", rule, {
-
     valid: [
         {
             code: "<For each={foo}><div/></For>",
@@ -39,10 +38,12 @@ ruleTester.run("jsx-for-require-each", rule, {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "'For' tag must have a 'each' attribute.",
-                type: "JSXOpeningElement"
-            }]
+            errors: [
+                {
+                    message: "'For' tag must have a 'each' attribute.",
+                    type: "JSXOpeningElement"
+                }
+            ]
         }
     ]
 });

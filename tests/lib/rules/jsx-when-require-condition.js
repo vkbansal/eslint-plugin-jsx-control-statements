@@ -19,7 +19,6 @@ var rule = require("../../../lib/rules/jsx-when-require-condition"),
 var ruleTester = new RuleTester();
 
 ruleTester.run("jsx-when-require-condition", rule, {
-
     valid: [
         {
             code: "<When condition={foo}><div/></When>",
@@ -39,10 +38,12 @@ ruleTester.run("jsx-when-require-condition", rule, {
                     jsx: true
                 }
             },
-            errors: [{
-                message: "'When' tag must have a 'condition' attribute.",
-                type: "JSXOpeningElement"
-            }]
+            errors: [
+                {
+                    message: "'When' tag must have a 'condition' attribute.",
+                    type: "JSXOpeningElement"
+                }
+            ]
         }
     ]
 });
